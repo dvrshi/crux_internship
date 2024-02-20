@@ -10,20 +10,20 @@ const Widget = () => {
     return (
         <div className='bg-indigo-100'>
             <div className='grid grid-cols-6 grid-rows-4 gap-4 p-4 h-[844px]'>
-                <div style={{ color: "white" }} className='row-start-1 row-end-2 col-start-2 col-end-3 rounded-[15px] flex pt-4 bg-indigo-500'>
-                    <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2' >
-                        <div className='border-b pl-2'>
-                            Today
-                        </div>
-                        <TableDataSmall />
-                    </div>
-                </div>
                 <div className='row-start-1 row-end-2 col-start-1 col-end-2 rounded-[15px] flex pt-4 bg-white'>
                     <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2' >
                         <div className='flex gap-2 border-b'>
                             <div className='w-8 text-right border-b-2 border-indigo-500'>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
+                        </div>
+                        <TableDataSmall />
+                    </div>
+                </div>
+                <div style={{ color: "white" }} className='row-start-1 row-end-2 col-start-2 col-end-3 rounded-[15px] flex pt-4 bg-indigo-500'>
+                    <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2' >
+                        <div className='border-b pl-2'>
+                            Today
                         </div>
                         <TableDataSmall />
                     </div>
@@ -91,7 +91,7 @@ const Widget = () => {
                             <div className='w-8 text-right'>30d</div>
                         </div>
                         <div >
-                            <LineChart width={400} height={600} axiscolor={"darkgray"} />
+                            <LineChart axiscolor={"darkgray"} />
                         </div>
                         <div style={{ fontSize: "0.8vw" }} className='flex flex-col justify-between px-4 pb-1'>
                             <div className='pb-2'>
@@ -105,7 +105,7 @@ const Widget = () => {
                                 </div>
                             </div>
                             <div className='pb-2'>
-                                <div className='border-indigo-700 border-l-2 border-l-2 px-2'>
+                                <div className='border-indigo-400 border-l-2 border-l-2 px-2'>
                                     <div style={{ fontSize: "10px" }}>
                                         Christmas25
                                     </div>
@@ -135,7 +135,7 @@ const Widget = () => {
                                 </div>
                             </div>
                             <div className='pb-2'>
-                                <div className='border-indigo-700 border-l-2 border-l-2 px-2'>
+                                <div className='border-indigo-400 border-l-2 border-l-2 px-2'>
                                     <div style={{ fontSize: "10px" }}>
                                         Christmas25
                                     </div>
@@ -183,7 +183,7 @@ const Widget = () => {
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
-                        <LineChart width={400} height={400} />
+                        <LineChart />
                         <div style={{ fontSize: "0.8vw" }} className='flex flex-col justify-between px-4 pb-1'>
                             <div className='pb-2'>
                                 <div className='border-red-700 border-l-2 border-l-2 px-2'>
@@ -196,7 +196,7 @@ const Widget = () => {
                                 </div>
                             </div>
                             <div className='pb-2'>
-                                <div className='border-indigo-700 border-l-2 border-l-2 px-2'>
+                                <div className='border-indigo-400 border-l-2 border-l-2 px-2'>
                                     <div style={{ fontSize: "10px" }}>
                                         Christmas25
                                     </div>
@@ -229,13 +229,13 @@ const Widget = () => {
                     </div>
                 </div>
                 <div className='row-start-4 row-end-5 col-start-4 col-end-5 rounded-[15px] flex bg-white pt-3'>
-                    <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2' >
+                    <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2 flex-grow'>
                         <div className='flex gap-2 border-b'>
                             <div className='w-8 text-right border-b-2 border-indigo-500'>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
-                        <LineChart width={400} height={400} axiscolor={"darkgray"} showXAxisLabels={false}  />
+                        <LineChart axiscolor={"darkgray"} showXAxisLabels={false} />
                     </div>
                 </div>
 

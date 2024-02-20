@@ -18,15 +18,14 @@ const data = [
   ],
 ];
 
-const LineChart = ({ width, height, axiscolor, showXAxisLabels = true }) => {
+const LineChart = ({ axiscolor, showXAxisLabels = true }) => {
   return (
-    <div>
+    <div style={{ width: '100%', height: '100%' }}>
       <VictoryChart
         id="test"
         theme={VictoryTheme.material}
-        width={width}
-        height={height}
-        padding={{ top: 50, bottom: 150, left: 80, right: 80 }}
+        // domainPadding={{ x: [40, 40] }} 
+        padding={{ top: 10, bottom: 150, left: 80, right: 80 }}
       >
         <VictoryLine
           style={{ data: { stroke: "green", strokeWidth: 10 } }}

@@ -11,7 +11,7 @@ const sampleData = [
         { x: 3, y: 50, fill: 'blue' },
         { x: 3.5, y: 35, fill: 'indigo' },
         { x: 4, y: 40, fill: 'violet' },
-        { x: 4.5, y: 55, fill: 'gray' }
+        { x: 4.5, y: 55, fill: 'pink' }
     ];
 
     return (

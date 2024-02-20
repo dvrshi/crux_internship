@@ -16,6 +16,13 @@ const data = [
     { "x": 3, "y": 20 },
     { "x": 4, "y": 25 },
   ],
+  [
+    { "x": 0, "y": 10 },
+    { "x": 1, "y": 25 },
+    { "x": 2, "y": 41 },
+    { "x": 3, "y": 17 },
+    { "x": 4, "y": 22 },
+  ],
 ];
 
 const LineChart = ({ axiscolor, showXAxisLabels = true }) => {
@@ -34,6 +41,10 @@ const LineChart = ({ axiscolor, showXAxisLabels = true }) => {
         <VictoryLine
           style={{ data: { stroke: "blue", strokeWidth: 10 } }}
           data={data[1]}
+        />
+        <VictoryLine
+          style={{ data: { stroke: "red", strokeWidth: 10 } }}
+          data={data[2]}
         />
         <VictoryAxis
           dependentAxis

@@ -1,12 +1,151 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
+import TableDataSmall from './tables/TableDataSmall';
+import LineChart from './charts/LineChart';
+import BarChart from './charts/BarChart';
+import PieChart from './charts/PieChart';
+function show_widget(selectedColor, selectedComponent, selectedGraph) {
+    let bgColor = 'bg-white';
+    let ftColor = 'gray';
+    let lnColor = 'indigo-300';
 
+    if (selectedComponent === 'Data') {
+        if (selectedColor === 'white' && selectedComponent === 'Data') {
+            bgColor = 'bg-white';
+            ftColor = 'gray';
+            lnColor = 'indigo-300';
+        }
+        if (selectedColor === 'black' && selectedComponent === 'Data') {
+            bgColor = 'bg-black';
+            ftColor = 'white';
+            lnColor = 'white';
+        }
+        if (selectedColor === 'indigo' && selectedComponent === 'Data') {
+            bgColor = 'bg-indigo-500';
+            ftColor = 'white';
+            lnColor = 'white';
+        }
+        return (
+            <>
+                <div className={`h-[208px] w-[208px] p-[16px] rounded-[15px] flex pt-4 ${bgColor} text-${ftColor}`}>
+                    <div style={{ fontSize: "0.8vw" }} className={` flex flex-col gap-2`} >
+                        <div className='flex gap-2 border-b'>
+                            <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
+                            <div className='w-8 text-right'>14d</div>
+                            <div className='w-8 text-right'>30d</div>
+                        </div>
+                        <TableDataSmall />
+                    </div>
+                </div>
+            </>
+        )
+    }
+    if (selectedComponent === 'Graph') {
+        if (selectedColor === 'white') {
+            bgColor = 'bg-white';
+            ftColor = 'gray';
+            lnColor = 'indigo-300';
+        }
+        if (selectedColor === 'black') {
+            bgColor = 'bg-black';
+            ftColor = 'white';
+            lnColor = 'white';
+        }
+        if (selectedColor === 'indigo') {
+            bgColor = 'bg-indigo-500';
+            ftColor = 'white';
+            lnColor = 'white';
+
+        }
+        if (selectedGraph === 'GraphBar') {
+            return (
+                <div style={{ fontSize: "0.8vw" }} className={` h-[208px] w-[208px] text-${ftColor} flex flex-col ${bgColor} rounded-[15px] pt-3  gap-3 w-full`}>
+                    <div className='flex gap-2 border-b '>
+                        <div className='w-8 text-right border-b-2'>7d</div>
+                        <div className='w-8 text-right'>14d</div>
+                        <div className='w-8 text-right'>30d</div>
+                    </div>
+                    <div className='w-full h-[150px]'>
+                        <BarChart width={500} height={500} />
+                    </div>
+                </div>
+            )
+        }
+        if (selectedGraph === 'GraphLine') {
+            return (
+                <div className={`h-[208px] w-[208px] p-[16px] rounded-[15px] flex pt-4 ${bgColor} text-${ftColor}`}>
+                    <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2 flex-grow'>
+                        <div className='flex gap-2 border-b'>
+                            <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
+                            <div className='w-8 text-right'>14d</div>
+                            <div className='w-8 text-right'>30d</div>
+                        </div>
+                        <LineChart axiscolor={"darkgray"} showXAxisLabels={true} />
+                    </div>
+                </div>
+            )
+        }
+        if (selectedGraph === 'GraphPie') {
+            return (
+                <div className={`h-[208px] w-[208px]  rounded-[15px] flex  ${bgColor} text-${ftColor}`}>
+                <div style={{ fontSize: "12px" }} className='flex flex-col gap-2 pt-4'>
+                    <div className='flex gap-2 border-b'>
+                        <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
+                        <div className='w-8 text-right'>14d</div>
+                        <div className='w-8 text-right'>30d</div>
+                    </div>
+                    <PieChart title={ftColor} subtitle={lnColor}/>
+                </div>
+                </div>
+            )
+        }
+    }
+    if (selectedComponent === 'Summary') {
+        if (selectedColor === 'white') {
+            bgColor = 'bg-white';
+            ftColor = 'gray';
+            lnColor = 'indigo-300';
+        }
+        if (selectedColor === 'black') {
+            bgColor = 'bg-black';
+            ftColor = 'white';
+            lnColor = 'white';
+        }
+        if (selectedColor === 'indigo') {
+            bgColor = 'bg-indigo-500';
+            ftColor = 'white';
+            lnColor = 'white';
+
+        }
+        return (
+            <>
+                <div className={`h-[208px] w-[208px] p-[16px] rounded-[15px] flex pt-4 ${bgColor} text-${ftColor}`}>
+                    <div style={{ fontSize: "0.8vw" }} className={` flex flex-col gap-2`} >
+                        <div className='flex gap-2 border-b'>
+                            <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
+                            <div className='w-8 text-right'>14d</div>
+                            <div className='w-8 text-right'>30d</div>
+                        </div>
+                        <div className='px-5 w-full' >
+                            <p>Based on the provided data, the most effective hour of the day to send an email across all
+                                stores for all time, with  the highest engagement after opening,
+                                is at 15:00(3 PM), with a total of 5041 emails opened. </p>
+                        </div>
+                    </div>
+                </div>
+            </>
+        )
+    }
+
+
+}
 function BasicModal() {
     const [open, setOpen] = useState(false);
     const [inputValue, setInputValue] = useState('');
-    const [selectedColor, setSelectedColor] = useState('');
-    const [selectedComponent, setSelectedComponent] = useState('');
+    const [selectedColor, setSelectedColor] = useState('white');
+    const [selectedComponent, setSelectedComponent] = useState('Data');
+    const [selectedGraph, setSelectedGraph] = useState('GraphBar')
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -16,15 +155,23 @@ function BasicModal() {
     };
 
     const handleColorButtonClick = (color) => {
+        // console.log("Selected Color:", color, "Selected Component:", selectedComponent);
+        show_widget(selectedColor + selectedComponent)
         setSelectedColor(color);
     };
 
     const handleComponentButtonClick = (component) => {
+        console.log("Selected Color:", selectedColor, "Selected Component:", component);
+        // show_widget(selectedColor + selectedComponent)
         setSelectedComponent(component);
     };
+    const handleGraphButtonClick = (graph) => {
+        console.log("Selected Color:", selectedColor, "Selected Component:", selectedComponent, "Selected Graph:", selectedGraph);
+        setSelectedGraph(graph);
+    }
 
     const handleSave = () => {
-        console.log(selectedColor+selectedComponent);
+        console.log(selectedColor + selectedComponent);
     };
 
     return (
@@ -55,8 +202,11 @@ function BasicModal() {
                                         <h1 className='text-lg font-semibold'>1x1</h1>
                                         <h1 className='text-lg font-semibold'>Type</h1>
                                     </div>
-                                    <div className="flex flex-1 justify-center items-center">
-                                        <div className="w-2/3 h-full flex justify-center items-center">{inputValue}</div>
+                                    <div className="flex flex-1 flex-col justify-center items-center">
+                                        <div className="w-2/3  flex justify-center items-center">{inputValue}</div>
+                                        <div>
+                                            {show_widget(selectedColor, selectedComponent, selectedGraph)}
+                                        </div>
                                     </div>
                                     <div className="flex justify-center h-16 items-center gap-4">
                                         <button className={`w-7 h-7 rounded-full ${selectedColor === 'white' ? 'bg-white border-2' : 'bg-white'} focus:border-black focus:outline-none focus:ring-2 focus:ring-white`} onClick={() => handleColorButtonClick('white')}></button>
@@ -75,9 +225,9 @@ function BasicModal() {
                                             <div className="text-lg font-semibold">Graph</div>
                                             <div className="text-sm">Random Desc</div>
                                             <div className="flex gap-3 mt-3">
-                                                <button className='w-[20px] h-[20px] bg-white flex justify-center items-center rounded-lg border border-gray-300'>1</button>
-                                                <button className='w-[20px] h-[20px] bg-white flex justify-center items-center rounded-lg border border-gray-300'>2</button>
-                                                <button className='w-[20px] h-[20px] bg-white flex justify-center items-center rounded-lg border border-gray-300'>3</button>
+                                                <button className='w-[20px] h-[20px] bg-white flex justify-center items-center rounded-lg border border-gray-300' onClick={() => handleGraphButtonClick('GraphBar')} >1</button>
+                                                <button className='w-[20px] h-[20px] bg-white flex justify-center items-center rounded-lg border border-gray-300' onClick={() => handleGraphButtonClick('GraphLine')}>2</button>
+                                                <button className='w-[20px] h-[20px] bg-white flex justify-center items-center rounded-lg border border-gray-300' onClick={() => handleGraphButtonClick('GraphPie')}>3</button>
                                             </div>
                                         </button>
                                         <button className={`w-[300px] h-[80px] bg-white flex flex-col rounded-lg border ${selectedComponent === 'Summary' ? 'border-indigo-300 focus:border-indigo-300' : 'border-gray-300 focus:border-indigo-300'} focus:outline-none focus:ring-2 focus:ring-indigo-300 flex justify-start items-start p-4`} onClick={() => handleComponentButtonClick('Summary')}>

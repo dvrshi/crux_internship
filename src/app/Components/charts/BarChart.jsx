@@ -2,7 +2,7 @@ import React from 'react';
 import { VictoryChart, VictoryBar, VictoryAxis,VictoryTheme } from 'victory';
 
 
-const BarChart = ({ width, height }) => {
+const BarChart = ({width,height}) => {
 const sampleData = [
         { x: 1, y: 20, fill: "red" },
         { x: 1.5, y: 20, fill: 'orange' },
@@ -15,6 +15,7 @@ const sampleData = [
     ];
 
     return (
+        <div style={{ width: '100%', height: '100%' }}>
         <VictoryChart
             theme={VictoryTheme.material}
             width={width}
@@ -39,12 +40,13 @@ const sampleData = [
                 tickValues={[0, 10, 20, 30, 40, 50]}
                 tickFormat={(t) => `${t}k`}
                 style={{
-                    tickLabels: { fontSize: 20, padding: 10 },
-                    grid: { stroke: "gray", strokeWidth: 0.5 }, axis: { display: "none" }
+                    tickLabels: { fontSize:35, padding: 10, fill: "#C3C3C3"},
+                    grid: { stroke: "#D3D3D3", strokeWidth: 0.5 }, axis: { display: "none" }
                 }}
             />
            
         </VictoryChart>
+        </div>
     );
 }
 

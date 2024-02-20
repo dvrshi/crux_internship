@@ -1,6 +1,6 @@
 import React from 'react'
 import { VictoryPie } from 'victory'
-function PieChart() {
+function PieChart({title="black",subtitle="gray"}) {
     return (
         <div>
             <svg viewBox={'10 40 350 350'} width={200} height={150}>
@@ -23,7 +23,7 @@ function PieChart() {
                     alignmentBaseline="middle"
                     fontSize="35"
                     fontFamily="Arial"
-                    fill="black"
+                    fill={title}
                 >
                    89,000
                 </text>
@@ -34,7 +34,7 @@ function PieChart() {
                     alignmentBaseline="middle"
                     fontSize="27"
                     fontFamily="Arial"
-                    fill="gray"
+                    fill={subtitle}
                 >
                    orders
                 </text>

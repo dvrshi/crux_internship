@@ -12,6 +12,7 @@ table td + td { border-left:1px solid white; }
     padding: 0 10px;
 }
 
+
 .smalltable td{
     padding: 0 4px;
 }

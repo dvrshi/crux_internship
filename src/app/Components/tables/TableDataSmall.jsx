@@ -22,7 +22,7 @@ const TableData = [
 function TableDataSmall() {
     return (
         
-            <table className="smalltable table-auto">
+            <table className="smalltable">
                 <thead>
                     <tr>
                         <td>Product</td>

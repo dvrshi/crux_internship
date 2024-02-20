@@ -8,7 +8,7 @@ import BarChart from './charts/BarChart';
 
 const Widget = () => {
     return (
-        <div className='bg-indigo-100'>
+        <div className='bg-indigo-100 px-8 py-4 h-[896px]'>
             <div className='grid grid-cols-6 grid-rows-4 gap-4 p-4 h-[844px]'>
                 <div className='row-start-1 row-end-2 col-start-1 col-end-2 rounded-[15px] flex pt-4 bg-white'>
                     <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2' >

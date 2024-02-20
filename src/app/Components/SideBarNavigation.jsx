@@ -8,7 +8,7 @@ import icon4 from '../../../public/icon4.svg'
 import avatar from '../../../public/avatar.svg'
 function SideBarNavigation() {
     return (
-        <div className='content py-8 items-center flex flex-col justify-between h-full' >
+        <div className='content py-8 items-center flex flex-col justify-between h-full border' >
             <div className='header flex flex-col gap-6'>
                 <div className='header w-full flex justify-center  pr-5 pl-6'>
                     <Image src={logo} alt='logo' />
@@ -27,4 +27,4 @@ function SideBarNavigation() {
     )
 }
 
-export default SideBarNavigation
+export default SideBarNavigation;

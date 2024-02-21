@@ -25,12 +25,13 @@ const data = [
   ],
 ];
 
-const LineChart = ({ axiscolor, showXAxisLabels = true }) => {
+const LineChart = ({ axiscolor,long,showXAxisLabels = true }) => {
   return (
     <div style={{ width: '100%', height: '100%' }}>
       <VictoryChart
         id="test"
         theme={VictoryTheme.material}
+        height={long ? 500 : undefined} 
         // domainPadding={{ x: [40, 40] }} 
         padding={{ top: 10, bottom: 150, left: 80, right: 80 }}
       >

@@ -33,15 +33,15 @@ function TableDataSmall() {
             </thead>
             <tbody>
                 {Object.keys(TableData[0]).map(product => (
-                    <tr key={product}>
-                        <td>{product}</td>
+                    <tr key={product} >
+                        <td className='text-left'>{product}</td>
                         {Object.keys(TableData[0][product]).map(quarter => (
                             <td key={quarter}>{TableData[0][product][quarter]}</td>
                         ))}
                     </tr>
                 ))}
                 <tr>
-                    <td>Total</td>
+                    <td className='text-left' >Total</td>
                     <td>8%</td>
                     <td>6%</td>
                 </tr>

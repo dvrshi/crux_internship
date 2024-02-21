@@ -34,10 +34,10 @@ import React from 'react'
 
 function TableDatabig() {
   return (
-        <table className="bigtable table-auto">
+        <table className="bigtable "  style={{ width: '100%' }}>
             <thead>
                 <tr>
-                    <td>Product</td>
+                    <td className='text-left'>Product</td>
                     <td>Q1-23</td>
                     <td>Q2-23</td>
                     <td>Q3-23</td>
@@ -48,38 +48,38 @@ function TableDatabig() {
             <tbody>
                 {Object.keys(TableData2[0]).map(product => (
                     <tr key={product}>
-                        <td>{product}</td>
+                        <td className='text-left'>{product}</td>
                         {Object.keys(TableData2[0][product]).map(quarter => (
                             <td key={quarter}>{TableData2[0][product][quarter]}</td>
                         ))}
                     </tr>
                 ))}
                 {Object.keys(TableData2[0]).map(product => (
-                    <tr key={product}>
-                        <td>{product}</td>
+                    <tr  key={product}>
+                        <td className='text-left'>{product}</td>
                         {Object.keys(TableData2[0][product]).map(quarter => (
                             <td key={quarter}>{TableData2[0][product][quarter]}</td>
                         ))}
                     </tr>
                 ))}
                 {Object.keys(TableData2[0]).map(product => (
-                    <tr key={product}>
-                        <td>{product}</td>
+                    <tr  key={product}>
+                        <td className='text-left'>{product}</td>
                         {Object.keys(TableData2[0][product]).map(quarter => (
                             <td key={quarter}>{TableData2[0][product][quarter]}</td>
                         ))}
                     </tr>
                 ))}
                 {Object.keys(TableData2[0]).map(product => (
-                    <tr key={product}>
-                        <td>{product}</td>
+                    <tr  key={product}>
+                        <td className='text-left'>{product}</td>
                         {Object.keys(TableData2[0][product]).map(quarter => (
                             <td key={quarter}>{TableData2[0][product][quarter]}</td>
                         ))}
                     </tr>
                 ))}
                 <tr>
-                    <td>Total</td>
+                    <td className='text-left'> Total</td>
                     <td>8%</td>
                     <td>6%</td>
                     <td>7%</td>

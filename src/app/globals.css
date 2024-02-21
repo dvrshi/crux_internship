@@ -6,13 +6,13 @@ body{
     color: rgb(122, 122, 122);
     font-weight: 500;
 }
-table td + td { border-left:1px solid white; }
+table td + td { border-left:1px solid rgb(214, 214, 214); }
 
 .bigtable td{
-    padding: 0 10px;
+    text-align: center;
 }
 
 
 .smalltable td{
-    padding: 0 4px;
+    text-align: center;
 }

@@ -12,20 +12,26 @@ const Widget = () => {
             <div className='grid grid-cols-6 grid-rows-4 gap-4 p-4 h-[844px]'>
                 <div className='row-start-1 row-end-2 col-start-1 col-end-2 rounded-[15px] flex pt-4 bg-white'>
                     <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2' >
-                        <div className='flex gap-2 border-b'>
-                            <div className='w-8 text-right border-b-2 border-indigo-300'>7d</div>
+                        <div className='flex gap-2 border-b w-full'>
+                            <div className='w-8 text-right border-b-2 border-indigo-500 text-indigo-500'>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
-                        <TableDataSmall />
+                        <div className='px-1'>
+
+                            <TableDataSmall />
+                        </div>
                     </div>
                 </div>
                 <div style={{ color: "white" }} className='row-start-1 row-end-2 col-start-2 col-end-3 rounded-[15px] flex pt-4 bg-indigo-500'>
                     <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2' >
-                        <div className='border-b pl-2'>
+                        <div className='border-b pl-2 w-full'>
                             Today
                         </div>
-                        <TableDataSmall />
+                        <div className='px-1'>
+
+                            <TableDataSmall />
+                        </div>
                     </div>
                 </div>
                 <div className='row-start-1 row-end-2 col-start-3 col-end-7 rounded-[15px] flex bg-white'>
@@ -36,11 +42,11 @@ const Widget = () => {
                             <div className='w-8 text-right'>30d</div>
                         </div>
                         <div className='w-full h-[150px]'>
-                        <BarChart width={500} height={500} />
+                            <BarChart width={500} height={500} />
                         </div>
                     </div>
                     <div style={{ fontSize: "0.85vw" }} className='w-full flex flex-col border-x-2 border-gray-200'  >
-                        <div className='flex gap-2 border-b pt-3'>
+                        <div className='flex gap-2 border-b pt-3 mb-3'>
                             <div className='w-8 text-right border-b-2 border-indigo-500'>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
@@ -61,14 +67,17 @@ const Widget = () => {
                     </div>
 
                 </div>
-                <div style={{ color: "white" }} className='row-start-2 row-end-4 col-start-1 col-end-3 rounded-[15px] flex pt-4 bg-zinc-700'>
-                    <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-3'>
+                <div style={{ color: "white" }} className='row-start-2 row-end-4 col-start-1 col-end-3 rounded-[15px] flex justify-center pt-4 bg-zinc-700'>
+                    <div style={{ fontSize: "0.8vw" }} className='w-full flex flex-col'>
                         <div className='flex gap-2 border-b '>
                             <div className='w-8 text-right border-b-2'>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
-                        <TableDatabig />
+                        <div className='w-full pt-2 px-4'>
+                            <TableDatabig />
+
+                        </div>
                     </div>
                 </div>
                 <div className='row-start-2 row-end-3 col-start-3 col-end-5 rounded-[15px] flex   bg-white'>
@@ -92,8 +101,8 @@ const Widget = () => {
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
-                        <div >
-                            <LineChart axiscolor={"darkgray"} />
+                        <div className='h-[500px]'>
+                            <LineChart axiscolor={"darkgray"} long={true} />
                         </div>
                         <div style={{ fontSize: "0.8vw" }} className='flex flex-col justify-between px-4 pb-1'>
                             <div className='pb-2'>
@@ -162,26 +171,32 @@ const Widget = () => {
                 </div>
                 <div style={{ color: "white" }} className='row-start-4 row-end-5 col-start-1 col-end-2 rounded-[15px] flex pt-4 bg-zinc-700'>
                     <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-3'>
-                        <div className='flex gap-2 border-b'>
+                        <div className='flex gap-2 border-b w-full'>
                             <div className='w-8 text-right border-b-2'>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
-                        <TableDataSmall />
+                        <div className='px-1'>
+
+                            <TableDataSmall />
+                        </div>
                     </div>
                 </div>
                 <div style={{ color: "white" }} className='row-start-4 row-end-5 col-start-2 col-end-3 rounded-[15px] flex pt-4 bg-indigo-500'>
-                    <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-3'>
+                    <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-3 w-full'>
                         <div className='border-b pl-2'>
                             Today
                         </div>
-                        <TableDataSmall />
+                        <div className='px-1'>
+
+                            <TableDataSmall />
+                        </div>
                     </div>
                 </div>
                 <div className='row-start-3 row-end-5 col-start-3 col-end-4 rounded-[15px] flex bg-white py-4'>
                     <div style={{ fontSize: "0.8vw" }} className='flex flex-col mt-0 w-full'>
                         <div className='flex gap-2 border-b mt-0 mb-1'>
-                            <div className='w-8 text-right border-b-2'>7d</div>
+                            <div className='w-8 text-right border-b-2 border-indigo-500 text-indigo-500'>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
@@ -233,7 +248,7 @@ const Widget = () => {
                 <div className='row-start-4 row-end-5 col-start-4 col-end-5 rounded-[15px] flex bg-white pt-3'>
                     <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2 flex-grow'>
                         <div className='flex gap-2 border-b'>
-                            <div className='w-8 text-right border-b-2 border-indigo-500'>7d</div>
+                            <div className='w-8 text-right border-b-2 border-indigo-500 text-indigo-500'>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
@@ -249,7 +264,7 @@ const Widget = () => {
                             <div className='w-8 text-right'>30d</div>
                         </div>
                         <div className='px-2 w-full h-[500px]'>
-                        <BarChart width={500} height={800} />
+                            <BarChart width={500} height={800} />
                         </div>
                     </div>
                 </div>

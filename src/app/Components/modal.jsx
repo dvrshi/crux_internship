@@ -5,6 +5,7 @@ import TableDataSmall from './tables/TableDataSmall';
 import LineChart from './charts/LineChart';
 import BarChart from './charts/BarChart';
 import PieChart from './charts/PieChart';
+
 function show_widget(selectedColor, selectedComponent, selectedGraph) {
     let bgColor = 'bg-white';
     let ftColor = 'gray';
@@ -28,14 +29,16 @@ function show_widget(selectedColor, selectedComponent, selectedGraph) {
         }
         return (
             <>
-                <div className={`h-[208px] w-[208px] p-[16px] rounded-[15px] flex pt-4 ${bgColor} text-${ftColor}`}>
+                <div className={`h-[208px] w-[208px] rounded-[15px] flex pt-4 ${bgColor} text-${ftColor}`}>
                     <div style={{ fontSize: "0.8vw" }} className={` flex flex-col gap-2`} >
                         <div className='flex gap-2 border-b'>
                             <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
-                        <TableDataSmall />
+                        <div >
+                            <TableDataSmall />
+                        </div>
                     </div>
                 </div>
             </>
@@ -60,13 +63,13 @@ function show_widget(selectedColor, selectedComponent, selectedGraph) {
         }
         if (selectedGraph === 'GraphBar') {
             return (
-                <div style={{ fontSize: "0.8vw" }} className={` h-[208px] w-[208px] text-${ftColor} flex flex-col ${bgColor} rounded-[15px] pt-3  gap-3 w-full`}>
+                <div style={{ fontSize: "0.8vw" }} className={`h-[208px] mx-4 w-[208px] text-${ftColor} flex flex-col ${bgColor} rounded-[15px] pt-3`}>
                     <div className='flex gap-2 border-b '>
                         <div className='w-8 text-right border-b-2'>7d</div>
                         <div className='w-8 text-right'>14d</div>
                         <div className='w-8 text-right'>30d</div>
                     </div>
-                    <div className='w-full h-[150px]'>
+                    <div className='w-[full] h-[150px]'>
                         <BarChart width={500} height={500} />
                     </div>
                 </div>
@@ -74,7 +77,7 @@ function show_widget(selectedColor, selectedComponent, selectedGraph) {
         }
         if (selectedGraph === 'GraphLine') {
             return (
-                <div className={`h-[208px] w-[208px] p-[16px] rounded-[15px] flex pt-4 ${bgColor} text-${ftColor}`}>
+                <div className={`h-[208px] w-[208px] pt-4 pb-5 rounded-[15px] flex ${bgColor} text-${ftColor}`}>
                     <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2 flex-grow'>
                         <div className='flex gap-2 border-b'>
                             <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
@@ -89,14 +92,14 @@ function show_widget(selectedColor, selectedComponent, selectedGraph) {
         if (selectedGraph === 'GraphPie') {
             return (
                 <div className={`h-[208px] w-[208px]  rounded-[15px] flex  ${bgColor} text-${ftColor}`}>
-                <div style={{ fontSize: "12px" }} className='flex flex-col gap-2 pt-4'>
-                    <div className='flex gap-2 border-b'>
-                        <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
-                        <div className='w-8 text-right'>14d</div>
-                        <div className='w-8 text-right'>30d</div>
+                    <div style={{ fontSize: "12px" }} className='flex flex-col gap-2 pt-4'>
+                        <div className='flex gap-2 border-b'>
+                            <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
+                            <div className='w-8 text-right'>14d</div>
+                            <div className='w-8 text-right'>30d</div>
+                        </div>
+                        <PieChart title={ftColor} subtitle={lnColor} />
                     </div>
-                    <PieChart title={ftColor} subtitle={lnColor}/>
-                </div>
                 </div>
             )
         }
@@ -176,7 +179,10 @@ function BasicModal() {
 
     return (
         <div>
-            <button className='p-3 border rounded-lg' type="button" onClick={handleOpen}>Open Widget</button>
+            <button className='bg-indigo-100 p-3 border rounded-lg flex gap-3 items-center text-indigo-500' type="button" onClick={handleOpen}>
+                <Image src={'plus.svg'} alt="plus" width={20} height={20} />
+                Add Widget
+            </button>
             {open && (
                 <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-30" onClick={handleClose}>
                     <div className="bg-white py-8 rounded-[20px]" onClick={(e) => e.stopPropagation()}>

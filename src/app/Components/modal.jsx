@@ -6,7 +6,9 @@ import LineChart from './charts/LineChart';
 import BarChart from './charts/BarChart';
 import PieChart from './charts/PieChart';
 
-function show_widget(selectedColor, selectedComponent, selectedGraph) {
+
+
+export function show_widget(selectedColor, selectedComponent, selectedGraph) {
     let bgColor = 'bg-white';
     let ftColor = 'gray';
     let lnColor = 'indigo-300';
@@ -28,23 +30,23 @@ function show_widget(selectedColor, selectedComponent, selectedGraph) {
             lnColor = 'white';
         }
         return (
-            <>
-                <div className={`h-[208px] w-[208px] rounded-[15px] flex pt-4 ${bgColor} text-${ftColor}`}>
+            <div>
+                <div className={`h-[208px] w-[208px] rounded-[15px] pt-4 ${bgColor} text-${ftColor}`}>
                     <div style={{ fontSize: "0.8vw" }} className={` flex flex-col gap-2`} >
                         <div className='flex gap-2 border-b'>
                             <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
-                        <div >
+                        <div className='px-2'>
                             <TableDataSmall />
                         </div>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
-    if (selectedComponent === 'Graph') {
+    else if (selectedComponent === 'Graph') {
         if (selectedColor === 'white') {
             bgColor = 'bg-white';
             ftColor = 'gray';
@@ -94,7 +96,7 @@ function show_widget(selectedColor, selectedComponent, selectedGraph) {
                 <div className={`h-[208px] w-[208px]  rounded-[15px] flex  ${bgColor} text-${ftColor}`}>
                     <div style={{ fontSize: "12px" }} className='flex flex-col gap-2 pt-4'>
                         <div className='flex gap-2 border-b'>
-                            <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
+                            <div className={`w-8 text-right border-b-2 border-${lnColor} text-${lnColor}`}>7d</div>
                             <div className='w-8 text-right'>14d</div>
                             <div className='w-8 text-right'>30d</div>
                         </div>
@@ -104,7 +106,7 @@ function show_widget(selectedColor, selectedComponent, selectedGraph) {
             )
         }
     }
-    if (selectedComponent === 'Summary') {
+    else if (selectedComponent === 'Summary') {
         if (selectedColor === 'white') {
             bgColor = 'bg-white';
             ftColor = 'gray';
@@ -122,8 +124,8 @@ function show_widget(selectedColor, selectedComponent, selectedGraph) {
 
         }
         return (
-            <>
-                <div className={`h-[208px] w-[208px] p-[16px] rounded-[15px] flex pt-4 ${bgColor} text-${ftColor}`}>
+            <div>
+                <div className={`h-[208px] w-[208px]  rounded-[15px] flex pt-4 ${bgColor} text-${ftColor}`}>
                     <div style={{ fontSize: "0.8vw" }} className={` flex flex-col gap-2`} >
                         <div className='flex gap-2 border-b'>
                             <div className={`w-8 text-right border-b-2 border-${lnColor}`}>7d</div>
@@ -137,10 +139,10 @@ function show_widget(selectedColor, selectedComponent, selectedGraph) {
                         </div>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
-
+    else return "No Widget Selected";
 
 }
 function BasicModal() {
@@ -149,6 +151,7 @@ function BasicModal() {
     const [selectedColor, setSelectedColor] = useState('white');
     const [selectedComponent, setSelectedComponent] = useState('Data');
     const [selectedGraph, setSelectedGraph] = useState('GraphBar')
+    
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -173,9 +176,6 @@ function BasicModal() {
         setSelectedGraph(graph);
     }
 
-    const handleSave = () => {
-        console.log(selectedColor + selectedComponent);
-    };
 
     return (
         <div>
@@ -246,7 +246,7 @@ function BasicModal() {
                                             <img src="/history.svg" alt="SVG Image" className="w-full h-full" />
                                         </button>
                                         <button className="w-[100px] h-[50px]  text-black border rounded-lg" onClick={handleClose}>Cancel</button>
-                                        <button className="w-[100px] h-[50px] bg-indigo-500 text-white rounded-lg" onClick={handleSave}>Save</button>
+                                        <button className="w-[100px] h-[50px] bg-indigo-500 text-white rounded-lg" onClick={handleClose}>Save</button>
                                     </div>
                                 </div>
                             </div>

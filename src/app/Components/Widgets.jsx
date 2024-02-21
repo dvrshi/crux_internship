@@ -6,12 +6,13 @@ import PieChart from './charts/PieChart';
 import LineChart from './charts/LineChart';
 import BarChart from './charts/BarChart';
 
+
 const Widget = () => {
     return (
         <div className='bg-indigo-100 px-8 py-4 h-[896px]'>
             <div className='grid grid-cols-6 grid-rows-4 gap-4 p-4 h-[844px]'>
-                <div className='row-start-1 row-end-2 col-start-1 col-end-2 rounded-[15px] flex pt-4 bg-white'>
-                    <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2' >
+                <div className='row-start-1 row-end-2 col-start-1 col-end-2 rounded-[15px] flex bg-white'>
+                    <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2 pt-3' >
                         <div className='flex gap-2 border-b w-full'>
                             <div className='w-8 text-right border-b-2 border-indigo-500 text-indigo-500'>7d</div>
                             <div className='w-8 text-right'>14d</div>
@@ -21,7 +22,9 @@ const Widget = () => {
 
                             <TableDataSmall />
                         </div>
+                        
                     </div>
+                 
                 </div>
                 <div style={{ color: "white" }} className='row-start-1 row-end-2 col-start-2 col-end-3 rounded-[15px] flex pt-4 bg-indigo-500'>
                     <div style={{ fontSize: "0.8vw" }} className='flex flex-col gap-2' >
